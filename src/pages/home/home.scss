@@ -1,0 +1,126 @@
+.flecha {
+    width: 100px !important;
+}
+
+.avatar {
+    width: 225px;
+    height: 225px;
+}
+
+.btnDificulty {
+    font-size: 14px !important;
+}
+
+.btnAvatar {
+    font-size: 16px !important;
+}
+
+.stepDescripcion {
+    font-size: 18px;
+}
+
+.paddingTittle {
+    padding-top: 5rem;
+}
+
+.tsc-color {
+    background-color: #004054;
+}
+
+.div-demo {
+    height: 100vh;
+}
+
+// BACKGROUNDS
+.step1 {
+    background-size: cover;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwallpaper07.jpg?alt=media&token=fe409013-9373-45ac-97cd-9bec01142c68);
+}
+
+.step2 {
+    background-size: cover;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwallpaper03.jpg?alt=media&token=21a8b4f2-67c6-4ca6-b5fe-f5923cd05fe5);
+}
+
+.step3 {
+    background-size: cover;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwallpaper08.jpg?alt=media&token=3ad64a92-a97c-444a-85b9-95fe2b8d8756);
+}
+
+.step-4 {
+    background-size: cover;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwallpaper06.jpg?alt=media&token=8f7c0d79-2d45-4d16-bec5-9f92412ddfea);
+}
+
+
+/* ///////////////////////////////////////LOADING//////////////////////////////////////////////*/
+
+
+/*LOADING*/
+
+.loader {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    perspective: 800px;
+}
+
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+
+/* ///////////////////////////////////////END LOADING//////////////////////////////////////////////*/
