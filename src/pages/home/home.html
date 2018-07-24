@@ -1,5 +1,19 @@
 <ion-slides pager>
+    <ion-slide>
+        <div class="div-demo step2 w-100">
+            <h2 class="textwhite qaranta pb-5 px-2 paddingTittle">
+                <strong>¡Bienvenido a TheSportChallenge!</strong>
+            </h2>
 
+            <img class="animated bounceIn center flecha pb-4" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Ftsc.png?alt=media&token=e1b5c981-1fa9-49ac-bba1-3e2dbd1641af">
+            <div class="p-2">
+                <h4 class="qaranta textwhite stepDescripcion pb-4 mb-4">
+                    Desliza el dedo a la derecha para continuar
+                </h4>
+            </div>
+            <img class="animated infinite pulse center pb-4 dedo" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Frotar.png?alt=media&token=1db6bc85-be49-4312-9bbc-59fc5b072300" alt="">
+        </div>
+    </ion-slide>
     <ion-slide>
         <div class="div-demo step1 w-100">
             <h2 class="textwhite qaranta pb-5 px-2 paddingTittle">
@@ -95,10 +109,10 @@
                         <button class="btnAvatar qaranta disabled mb-4 btn btn-block tsc-color">Lionel Messi</button>
                     </div>
                     <div class="col-12">
-                        <button class="btn btnAvatar animated infinite mb-4 pulse qaranta btn-block btn-dark-green">PLAY NOW</button>
+                        <button ion-button [navPush]="'registro'" class="btn btnAvatar animated infinite mb-4 pulse qaranta btn-block btn-dark-green">REGISTRARSE</button>
                     </div>
                     <div class="col-12">
-                        <button class="btn btnAvatar animated infinite pulse qaranta btn-block tsc-color">PLAY DEMO</button>
+                        <button ion-button [navPush]="'login'" class="btn btnAvatar animated infinite pulse qaranta btn-block tsc-color">INICIAR SESIÓN</button>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,143 @@
+@font-face {
+    font-family: QarantaBold;
+    src: url(../../../assets/fonts/Qaranta-Bold.otf);
+}
+
+.qaranta {
+    font-family: QarantaBold !important;
+    letter-spacing: -0.5px !important;
+}
+
+.textwhite{
+    color: white !important;
+}
+
+/*MAIN CLASS*/
+        
+.filterblur {
+    filter: blur(3px);
+}
+
+.center {
+    text-align: center !important;
+    align-content: center;
+    display: block !important;
+    margin: auto !important;
+}
+
+.imgcenter {
+    margin: auto !important;
+    display: block !important;
+}
+
+.justify {
+    text-align: justify !important;
+}
+
+.left {
+    text-align: left !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.espaciotop {
+    margin-top: 3%;
+}
+
+.textwhite {
+    color: white !important;
+}
+
+.textblack {
+    color: black !important;
+}
+
+.bgwhite {
+    background-color: white;
+}
+
+.bgblack {
+    background-color: black;
+}
+
+.px12 {
+    font-size: 12px;
+}
+
+.colpadding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.tsc-color {
+    background-color: #004054;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+/*FIN MAIN CLASES*/
+/*BACKGROUND*/
+
+/* ANIMACIONES PARA LA CARGA DE PÁGINAS*/
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.low {
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+/*FIN ANIMACIONES*/
+
+@media screen and (min-width: 0px) and (max-width: 699px) {
+    /*PADDING 0 A LA TABLA*/
+    .container-fluid {
+        padding: 0 !important;
+    }
+    .main-container {
+        margin-top: -1px;
+    }
+}
+/*CERRAR MODAL Y CORREGIR LOS PADDING DEL BOOTSTRAP*/
+.cursor {
+    cursor: pointer;
+}
+
+
+
 /* Required for full background image */
 
 html,
