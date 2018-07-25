@@ -60,6 +60,8 @@ export class AuthProvider {
       }else{
         this.sesionActiva = false;
       }
+      console.log(this.sesionActiva);
+      
     });
   }
 
@@ -130,9 +132,8 @@ export class AuthProvider {
 
   signOut() {
   //OFFLINE
+  this.navCtrl.setRoot("home");
   this.afauth.auth.signOut();
-  this.navCtrl.popToRoot();
-   
  }
 
 }
