@@ -1,0 +1,162 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <button (click)="this.auths.signOut()" ion-button class="btn btn-cerrar btn-dark-green btn-block">Cerrar Sesión</button>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+    <div *ngIf="this.auths.user != null && this.auths.user != undefined" class="contenedor-trivia">
+        <!-- MODO DE JUEGO -->
+        <div *ngIf="!selectDificultad">
+            <div *ngFor="let trivia of this.gameS.trivias">
+                <div class="animated bounceInLeft mt-5 p-2">
+                    <h1 class="animated infinite pulse card-title text-center pt-4 pb-2">
+                        <span class="badge badge-pill green">
+                            GUESS WHO
+                        </span>
+                    </h1>
+                    <div class="row p-3">
+                        <div class="col-6 padding0">
+                            <h1 class="card-title text-center">
+                                <span style="font-size: 18px;" class="badge badge-sets tsc-color">
+                                    Timer: {{ this.gameS.contadorTrivia }}
+                                </span>
+                            </h1>
+                        </div>
+                        <div class="col-6 padding0">
+                            <h1 class="card-title text-center">
+                                <span style="font-size: 20px;" class="badge badge-sets tsc-color">
+                                  Hits: {{ this.gameS.position }}/5
+                              </span>
+                            </h1>
+                        </div>
+                        <div class="col-6 padding0">
+                            <h1 class="card-title text-center">
+                                <span style="font-size: 20px;" class="badge badge-sets tsc-color">
+                                    Ganaras: +{{ this.gameS.acumulado }}
+                                </span>
+                            </h1>
+                        </div>
+                        <div class="col-6 padding0">
+                            <h1 class="card-title text-center pb-1">
+                                <span style="font-size: 20px;" class="badge badge-sets tsc-color">
+                                    Total: {{ this.gameS.loot }}
+                                </span>
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="avatar mx-auto white">
+                        <img height="225px" width="225px" src="{{ trivia.img_url }}" class="z-depth-2 rounded-circle">
+                    </div>
+
+                    <div class="card-body">
+                        <hr>
+                        <!-- OPTIONS DEMO -->
+                        <div *ngIf="modedemo" class="row align-items-center">
+                            <div [ngClass]="{'order-last': this.gameS.buttonRandom == 1}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.nextTrivia('facil')" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.answer }}</button>
+                            </div>
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 1}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option1 }}</button>
+                            </div>
+                        </div>
+                        <!-- OPTIONS FACIL -->
+                        <div *ngIf="modefacil" class="row align-items-center">
+                            <div [ngClass]="{'order-last': this.gameS.buttonRandom == 1}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.nextTrivia('facil')" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.answer }}</button>
+                            </div>
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 1}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option1 }}</button>
+                            </div>
+                        </div>
+                        <!-- OPTIONS MEDIO -->
+                        <div *ngIf="modemedio" class="row align-items-center">
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 1, 'order-last': this.gameS.buttonRandom == 2}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option1 }}</button>
+                            </div>
+                            <div [ngClass]="{'order-last': this.gameS.buttonRandom == 1, 'order-first': this.gameS.buttonRandom == 2}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.nextTrivia('medio')" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.answer }}</button>
+                            </div>
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 0}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option2 }}</button>
+                            </div>
+                        </div>
+                        <!-- OPTIONS DIFICIL -->
+                        <div *ngIf="modedificil" class="row align-items-center">
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 1, 'order-last': this.gameS.buttonRandom == 2}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option1 }}</button>
+                            </div>
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 3}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option3 }}</button>
+                            </div>
+                            <div [ngClass]="{'order-last': this.gameS.buttonRandom == 1, 'order-first': this.gameS.buttonRandom == 2}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.nextTrivia('medio')" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.answer }}</button>
+                            </div>
+                            <div [ngClass]="{'order-first': this.gameS.buttonRandom == 0}" class="col-12 col-sm-12 col-md-6">
+                                <button (click)="this.gameS.answerFail()" class="btn-options mb-2 btn btn-block btn-dark-green">{{ trivia.options.option2 }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODO DE JUEGO -->
+
+        <!-- SELECCIONA LA DIFICULTAD Y LAS RESPUESTAS CORRECTAS/MONGO GANADO -->
+        <div class="animated bounceIn">
+            <!-- SI EL JUGADOR AUN NO SELECCIONA LA DIFICULTAD: -->
+            <div *ngIf="selectDificultad">
+                <div class="div-demo step1 w-100">
+                    <div class="encabezado">
+                        <h2 class="textwhite qaranta center">
+                            Bienvenido:
+                            <strong>{{ this.auths.user.username }}</strong>
+                        </h2>
+                    </div>
+                    <h4 class="textwhite stepDescripcion center p-5">
+                        Elige la dificultad
+                    </h4>
+                    <img class="center animated infinite pulse flecha pb-4" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fflecha-derecha.png?alt=media&token=cd269020-f834-4215-bf66-9c84e08356eb">
+                    <div class="row p-3">
+                        <div class="col-12 mb-3">
+                            <button (click)="confirmarTrivia('demo')" href="#" class="btn btn-select btn-block tsc-color">Jugar Demo</button>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <button (click)="confirmarTrivia('facil')" href="#" class="btn btn-select btn-block btn-dark-green">Facil (80 Coins)</button>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <button (click)="confirmarTrivia('medio')" href="#" class="btn btn-select btn-block btn-dark-green">Medio (500 Coins)</button>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <button (click)="confirmarTrivia('dificil')" href="#" class="btn btn-select btn-block btn-dark-green">Dificil (1000 Coins)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HISTS, TIMER, RETIRAR -->
+        </div>
+        <!-- END SELECCIONA LA DIFICULTAD Y LAS RESPUESTAS CORRECTAS/MONGO GANADO -->
+    </div>
+
+
+    <!-- ////////////////////////////////////////////AUDIO GANADOR//////////////////////////////////////////// -->
+    <audio style="display: none" id="aplausos" controls>
+        <source type="audio/wav" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2FCheers.wav?alt=media&token=5b64ee2a-8cb6-47b1-89aa-25b8042cf3d6">
+    </audio>
+    <audio style="display: none" id="coins" controls>
+        <source type="audio/wav" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2FCoins.wav?alt=media&token=4317175e-9b08-4243-878d-2d3ccf1eaf1e">
+    </audio>
+    <audio style="display: none" id="error" controls>
+        <source type="audio/wav" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2FError.wav?alt=media&token=9e223ff0-b1fe-48e4-85e2-5a6b75e6400d">
+    </audio>
+    <audio style="display: none" id="winning" controls>
+        <source type="audio/wav" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwinning.mp3?alt=media&token=4a1a658f-f8a3-4c03-bbd3-9cb7629a05ac">
+    </audio>
+    <audio style="display: none" id="woosh" controls>
+        <source type="audio/wav" src="https://firebasestorage.googleapis.com/v0/b/tsc-bd655.appspot.com/o/elementosWeb%2Fwoosh.mp3?alt=media&token=44bc3e28-5190-416d-a0e5-9735533efcc0">
+    </audio>
+
+</ion-content>

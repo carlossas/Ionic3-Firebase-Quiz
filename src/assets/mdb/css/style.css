@@ -5,15 +5,16 @@
 
 .qaranta {
     font-family: QarantaBold !important;
-    letter-spacing: -0.5px !important;
+    /* letter-spacing: -0.5px !important; */
 }
 
-.textwhite{
+.textwhite {
     color: white !important;
 }
 
+
 /*MAIN CLASS*/
-        
+
 .filterblur {
     filter: blur(3px);
 }
@@ -82,8 +83,13 @@
 .pointer {
     cursor: pointer !important;
 }
+
+
 /*FIN MAIN CLASES*/
+
+
 /*BACKGROUND*/
+
 
 /* ANIMACIONES PARA LA CARGA DE PÁGINAS*/
 
@@ -120,6 +126,8 @@
 .fadeIn {
     animation-name: fadeIn;
 }
+
+
 /*FIN ANIMACIONES*/
 
 @media screen and (min-width: 0px) and (max-width: 699px) {
@@ -131,40 +139,10 @@
         margin-top: -1px;
     }
 }
+
+
 /*CERRAR MODAL Y CORREGIR LOS PADDING DEL BOOTSTRAP*/
+
 .cursor {
     cursor: pointer;
-}
-
-
-
-/* Required for full background image */
-
-html,
-body,
-header,
-.view {
-    height: 100%;
-}
-
-@media (max-width: 740px) {
-    html,
-    body,
-    header,
-    .view {
-        height: 1100px;
-    }
-}
-
-@media (min-width: 800px) and (max-width: 850px) {
-    html,
-    body,
-    header,
-    .view {
-        height: 700px;
-    }
-}
-
-h6 {
-    line-height: 1.7;
 }

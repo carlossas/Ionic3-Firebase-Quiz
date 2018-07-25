@@ -20,6 +20,7 @@ import { HomePage } from '../pages/home/home';
 
 //SERVICIOS
 import { AuthProvider } from '../providers/auth/auth';
+import { GameProvider } from '../providers/game/game';
 
 
 export const firebaseConfig = {
@@ -59,7 +60,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    GameProvider
   ]
 })
 export class AppModule {}

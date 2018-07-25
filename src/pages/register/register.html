@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
     <!-- Default form register -->
     <form class="text-center border border-light p-4">
 
@@ -18,31 +18,27 @@
 
             <ion-item>
                 <ion-label floating>Usuario</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input [(ngModel)]="username" name="username" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label floating>Correo</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label floating>Contraseña</ion-label>
-                <ion-input type="password"></ion-input>
+                <ion-input [(ngModel)]="pass" name="pass" type="password"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating>Confirmar contraseña</ion-label>
-                <ion-input type="password"></ion-input>
+                <ion-input [(ngModel)]="confpass" name="confpass" type="password"></ion-input>
             </ion-item>
 
         </ion-list>
 
         <!-- Sign up button -->
-        <button class="btn animated infinite pulse btn-register qaranta mb-5 btn-dark-green btn-block" type="submit">Registrarme</button>
-
-        <!-- Social register -->
-        <!-- <p>Entrar con:</p> -->
-
+        <button [ngClass]="{'disabled': confpass != pass}" (click)="authS.emailSignUp(email, pass, username)" class="btn animated infinite pulse btn-register mb-5 btn-dark-green btn-block">Registrarme</button>
 
         <hr>
 
