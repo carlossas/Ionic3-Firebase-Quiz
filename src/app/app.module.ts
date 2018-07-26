@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //COMPONENTES
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+// import { HomePage } from '../pages/home/home';
 
 //SERVICIOS
 import { AuthProvider } from '../providers/auth/auth';
@@ -36,7 +36,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    // HomePage,
   ],
   imports: [
     HttpClientModule,
@@ -52,7 +52,7 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    // HomePage,
   ],
   providers: [
     //FIREBASE

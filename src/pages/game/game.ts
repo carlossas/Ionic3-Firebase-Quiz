@@ -245,8 +245,8 @@ export class GamePage {
               setTimeout(() => {
                 this.gameS.contador();
                 this.checkRetry().subscribe();
-              }, 500);
-        }, 650);
+              }, 1000);
+        }, 600);
        
 
         clearInterval( intervaloTrivia );
